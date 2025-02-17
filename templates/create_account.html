@@ -3,26 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
+    <title>Create Account - SecureBank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Create Account</h1>
-    <form method="POST">
-        <!-- Form fields for account creation -->
-        <input type="text" name="username" placeholder="Username" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <input type="text" name="age" placeholder="Age" required><br>
-        <input type="text" name="first_name" placeholder="First Name" required><br>
-        <input type="text" name="last_name" placeholder="Last Name" required><br>
-        <input type="text" name="account_type" placeholder="Account Type" required><br>
-        <input type="text" name="account_number" placeholder="Account Number" required><br>
-        <input type="text" name="card_number" placeholder="Card Number" required><br>
-        <input type="text" name="credit_score" placeholder="Credit Score" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="text" name="phone_number" placeholder="Phone Number" required><br>
-        <input type="text" name="address" placeholder="Address" required><br>
-        <button type="submit">Create Account</button>
-    </form>
-    <a href="/">Back to Home</a>
+    <div class="container">
+        <h1>Create Account</h1>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="text" name="age" placeholder="Age" required>
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="text" name="account_type" placeholder="Account Type" required>
+            <input type="text" name="account_number" placeholder="Account Number" required>
+            <input type="text" name="card_number" placeholder="Card Number" required>
+            <input type="text" name="credit_score" placeholder="Credit Score" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phone_number" placeholder="Phone Number" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <button type="submit">Create Account</button>
+        </form>
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
 </body>
 </html>

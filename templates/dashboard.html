@@ -3,31 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard - SecureBank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .balance {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 1.5rem;
+        }
+        .ledger {
+            margin-bottom: 1.5rem;
+        }
+        .ledger ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .ledger li {
+            background: #f9f9f9;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        form {
+            margin-bottom: 1.5rem;
+        }
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .logout-link {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function toggleLedger() {
+            var ledger = document.getElementById('ledger');
+            if (ledger.style.display === 'none') {
+                ledger.style.display = 'block';
+            } else {
+                ledger.style.display = 'none';
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>Dashboard</h1>
-    <p>Balance: {{ balance }}</p>
-    <h2>Ledger</h2>
-    <ul>
-        {% for entry in ledger %}
-        <li>{{ entry }}</li>
-        {% endfor %}
-    </ul>
-    <form method="POST" action="/deposit">
-        <input type="number" name="amount" placeholder="Deposit Amount" required><br>
-        <button type="submit">Deposit</button>
-    </form>
-    <form method="POST" action="/withdraw">
-        <input type="number" name="amount" placeholder="Withdrawal Amount" required><br>
-        <button type="submit">Withdraw</button>
-    </form>
-    <form method="POST" action="/make_purchase">
-        <input type="text" name="name" placeholder="Item Name" required><br>
-        <input type="number" name="price" placeholder="Item Price" required><br>
-        <input type="text" name="desc" placeholder="Item Description" required><br>
-        <button type="submit">Make Purchase</button>
-    </form>
-    <a href="/logout">Logout</a>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <div class="balance">Balance: ${{ balance }}</div>
+        <button onclick="toggleLedger()">Toggle Ledger</button>
+        <div id="ledger" class="ledger" style="display: none;">
+            <h2>Ledger</h2>
+            <ul>
+                {% for entry in ledger %}
+                <li>{{ entry }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <form method="POST" action="/deposit">
+            <input type="number" name="amount" placeholder="Deposit Amount" required>
+            <button type="submit">Deposit</button>
+        </form>
+        <form method="POST" action="/withdraw">
+            <input type="number" name="amount" placeholder="Withdrawal Amount" required>
+            <button type="submit">Withdraw</button>
+        </form>
+        <form method="POST" action="/make_purchase">
+            <input type="text" name="name" placeholder="Item Name" required>
+            <input type="number" name="price" placeholder="Item Price" required>
+            <input type="text" name="desc" placeholder="Item Description" required>
+            <button type="submit">Make Purchase</button>
+        </form>
+        <a href="/logout" class="logout-link">Logout</a>
+    </div>
 </body>
 </html>
