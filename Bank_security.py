@@ -11,6 +11,22 @@ from Crypto.PublicKey import RSA
 from Crypto.Signature import pkcs1_15
 import hashlib
 import os
+
+"""NOTE:
+        Theres only so much we can do to harden a webserver in one script. 
+
+        Centralizing security to the same machine running the server becomes a problem.
+
+        My idea for a fix is to force the hacker to get sudo, if they can get sudo then well done you have the admin password. 
+        If not though, they will not be able to read the password unless they can read mem while they are running the file.
+
+        Another idea to really harden the software and distribute risk to the OS:
+
+        check if euid is 0 (Program is running in admin context) once it's first called.
+        If not running as admin, crash the program and tell user to get admin.
+        This way a hacker might be able to even run the program, but without admin they cannot get the password even if its in plaintext
+        They also cannot decrypt the database.
+        """
 class Bank_security():
     def __init__(self):
         self.key_size = None
@@ -23,8 +39,7 @@ class Bank_security():
         self.out_file = None
         self.salt = None
         self.nonce = None
-    def handle_switches(self):         
-        
+    def handle_switches(self):
         for x in range (len(sys.argv)):
             allargs = sys.argv          
             
