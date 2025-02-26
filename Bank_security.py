@@ -39,10 +39,20 @@ class Bank_security():
         self.out_file = None
         self.salt = None
         self.nonce = None
+        ## If no options are given, the assumption is that this script is being called by the web app.
+        ## If so, handle switches will tell the script to read a state file  to get it's options.
+        
     def handle_switches(self):
-        for x in range (len(sys.argv)):
-            allargs = sys.argv          
+        allargs = sys.argv 
+        if (len(allargs)== 1):
+            self.read_state_file()
+            self.parse_from_file()
+            print("Mode:\t", self.mode,"\nKey:\t", self.key_size, "\nIV:\t", self.IV)
+            if(self.nonce):
+                print("Nonce:\t ", self.nonce)
+            sys.exit(0)
             
+        for x in range (len(sys.argv)):      
             if(allargs[x] == ("-p")):
                 self.password = allargs[x+1]
             
@@ -84,10 +94,11 @@ class Bank_security():
     def run_program(self):
         self.handle_switches()  
         ##If we are only saving a passwd to a file (a key file doesn't exist)
-        if self.out_file and not os.path.exists("lock.dat"):
+        if not self.out_file and not os.path.exists("lock.dat"):
             self.generate_key()
             self.run_encryption()
             self.save_to_file()
+            self.save_state_to_file()
         else:
             self.parse_from_file()  # Load key from file
             if self.key is None:  # Check if key was loaded successfully
@@ -188,29 +199,45 @@ class Bank_security():
         try:
             with open("lock.dat", 'wb') as f:
                 f.write(self.key)
-                f.write(self.IV)
-                f.write(self.nonce)
-                f.write(self.cipher_text)
-                if not self.nonce:
-                    print(f"Key, IV, and encrypted password saved to a file")
-                else:
-                    print(f"Key, IV, nonce, and encrypted password saved to a file")
+                print(f"Keysaved to a file")
         except Exception as e:
-            print(f"Error saving to file: {e}")
+            print(f"Error saving key to file: {e}")
+    
+    def save_state_to_file(self):
+        try:
+            with open("state.txt", 'w') as f:
+                f.write(str(self.mode))
+                f.write("\n")
+                f.write(str(self.key_size))
+                f.write("\n")
+                f.write(str(self.IV))
+                f.write("\n")
+                if(self.nonce):
+                    f.write(str(self.nonce))
+                print(f"State of key written to a file.")
+        except Exception as e:
+            print(f"Error saving state to file:\t {e}")
+                    
 
     def parse_from_file(self):
         try:
             with open("lock.dat", 'rb') as f:
-                key_size = self.key_size // 8
-                self.key = f.read(key_size)  # Read key first
-                self.IV = f.read(16)  # Read IV second
-                self.nonce = f.read(8)
-                self.cipher_text = f.read()  # Read cipher_text last
-            
+                self.key = f.read()  # Read key first
         except Exception as e:
-            print(f"Error parsing from file: {e}")
-            return None, None, None
-        
+            print(f"Error grabbing key from file:\t {e}")
+            
+                
+    def read_state_file(self):
+        try:
+            with open("state.txt", 'r') as f:
+                self.mode = f.readline().strip()
+                self.key_size = f.readline().strip()
+                self.IV = f.readline().strip()
+                self.nonce = f.readline().strip()
+                print("State of key captured, ready for decryption.")
+        except Exception as e:
+            print(f"Error parsing from file:\t {e}")
+    
             
             
 test = Bank_security()
