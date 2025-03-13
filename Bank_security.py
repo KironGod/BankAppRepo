@@ -3,7 +3,7 @@ import sys
 import time
 #import pyAesCrypt to encrypt a file
 from Crypto.Cipher import AES
-from Cryptodome.Random import get_random_bytes
+from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
 import secrets
 from Crypto.Cipher import PKCS1_OAEP
@@ -11,6 +11,8 @@ from Crypto.PublicKey import RSA
 from Crypto.Signature import pkcs1_15
 import hashlib
 import os
+import shutil
+import subprocess
 
 """NOTE:
         Theres only so much we can do to harden a webserver in one script. 
@@ -30,7 +32,7 @@ import os
 class Bank_security():
     def __init__(self):
         self.key_size = None
-        self.password = None
+        self.msg = None
         self.mode = None
         self.IV = get_random_bytes(16)
         self.key = None
@@ -39,8 +41,9 @@ class Bank_security():
         self.out_file = None
         self.salt = None
         self.nonce = None
+        self.path = None
         ## If no options are given, the assumption is that this script is being called by the web app.
-        ## If so, handle switches will tell the script to read a state file  to get it's options.
+        ## If so, handle switches will tell the script to read a state file to get it's options.
         
     def handle_switches(self):
         allargs = sys.argv 
@@ -89,7 +92,18 @@ class Bank_security():
         self.handle_switches()
         byte_count = self.key_size // 8
         self.key = get_random_bytes(byte_count)
+    
+    def generate_certificate(self):
         
+        openssl_path = shutil.which("openssl")  # ✅ Correct way to find OpenSSL
+        # Searches for OpenSSL in system PATH
+        if not openssl_path:
+            raise FileNotFoundError("OpenSSL not found. Ensure it's installed and in your PATH.")
+        self.path = openssl_path
+        password = "password"
+        if (not os.path.exists("server.key" or not os.path.exists("server.crt"))):
+            cmd = [f"{self.path}", "req", "-x509", "-newkey", "rsa:2048","-keyout", "server.key", "-out", "server.crt", "-days", "365","-passout", f"pass:{password}"]
+            subprocess.run(cmd)
         
     def run_program(self):
         self.handle_switches()  
@@ -130,68 +144,68 @@ class Bank_security():
             self.decrypt_CTR()
         
     def encrypt_ECB(self):
-        print(f"Encrypting the password: {self.password}")
-        encoded_text = pad(self.password.encode(), AES.block_size)
+        print(f"Encrypting the password: {self.msg}")
+        encoded_text = pad(self.msg.encode(), AES.block_size)
         self.aes = AES.new(self.key, AES.MODE_ECB)
         self.cipher_text = self.aes.encrypt(encoded_text)
     
     def encrypt_CBC(self):
-        print(f"Encrypting the password: {self.password}")
-        encoded_text = pad(self.password.encode(), AES.block_size)
+        print(f"Encrypting the password: {self.msg}")
+        encoded_text = pad(self.msg.encode(), AES.block_size)
         self.aes = AES.new(self.key, AES.MODE_CBC, self.IV)
         self.cipher_text = self.aes.encrypt(encoded_text)
         
     def encrypt_CFB(self):
-        print(f"Encrypting the password: {self.password}")
-        encoded_text = self.password.encode()
+        print(f"Encrypting the password: {self.msg}")
+        encoded_text = self.msg.encode()
         self.aes = AES.new(self.key, AES.MODE_CFB, self.IV)
         self.cipher_text = self.aes.encrypt(encoded_text)
         
     def encrypt_OFB(self):
-        print(f"Encrypting the password: {self.password}")
+        print(f"Encrypting the password: {self.msg}")
         self.aes = AES.new(self.key, AES.MODE_OFB, self.IV)
-        self.cipher_text = self.aes.encrypt(self.password.encode())
+        self.cipher_text = self.aes.encrypt(self.msg.encode())
         
     def encrypt_CTR(self):
-        print(f"Encrypting the password: {self.password}")
-        encoded_text = self.password.encode()
+        print(f"Encrypting the msg: {self.msg}")
+        encoded_text = self.msg.encode()
         self.nonce = get_random_bytes(8)  # Generate an 8-byte nonce
         self.aes = AES.new(self.key, AES.MODE_CTR, nonce= self.nonce)
         self.cipher_text = self.aes.encrypt(encoded_text)
         
     def decrypt_ECB(self):
-        print(f"Received ciphertext: {self.cipher_text}")
+        print(f"Decrypting ciphertext: {self.cipher_text}")
         self.aes = AES.new(self.key, AES.MODE_ECB)
-        self.password = (unpad(self.aes.decrypt(self.cipher_text), AES.block_size).decode())
-        print(f"Decrypted message: {self.password}")
+        self.msg = (unpad(self.aes.decrypt(self.cipher_text), AES.block_size).decode())
+        print(f"Decrypted message: {self.msg}")
         
     def decrypt_CBC(self):
-        print(f"Decrypting Password: {self.cipher_text}")
+        print(f"Decrypting ciphertext: {self.cipher_text}")
         self.aes = AES.new(self.key, AES.MODE_CBC, self.IV)  
         decrypted_text = unpad(self.aes.decrypt(self.cipher_text), AES.block_size)
-        self.password = decrypted_text.decode('utf-8')  # Decode to string
-        print(f"Decrypted password: {self.password}")
+        self.msg = decrypted_text.decode('utf-8')  # Decode to string
+        print(f"Decrypted password: {self.msg}")
         
     def decrypt_CFB(self):
         print(f"Decrypting Password: {self.cipher_text}")
         self.aes = AES.new(self.key, AES.MODE_CFB, self.IV)
         decrypted_tuple = self.aes.decrypt(self.cipher_text)  # Get the tuple
-        self.password = decrypted_tuple  # Access the first element (password)
-        print(f"Decrypted password: {self.password.decode()}")
+        self.msg = decrypted_tuple  # Access the first element (msg)
+        print(f"Decrypted password: {self.msg.decode()}")
 
     def decrypt_CTR(self):
         print(f"Decrypting Password: {self.cipher_text}")
         self.aes = AES.new(self.key, AES.MODE_CTR, nonce= self.nonce)  
         decrypted_ciphertext = self.aes.decrypt(self.cipher_text)
-        self.password = decrypted_ciphertext.decode()
-        print(f"Decrypted password: {self.password}")
+        self.msg = decrypted_ciphertext.decode()
+        print(f"Decrypted msg: {self.msg}")
         
     def decrypt_OFB(self):
-        print(f"Decrypting Password: {self.cipher_text}")
+        print(f"Decrypting msg: {self.cipher_text}")
         self.aes = AES.new(self.key, AES.MODE_OFB, self.IV)
         decrypted_text = self.aes.decrypt(self.cipher_text)
-        self.password = decrypted_text.decode()  # Decode to string
-        print(f"Decrypted password: {self.password}")
+        self.msg = decrypted_text.decode()  # Decode to string
+        print(f"Decrypted msg: {self.msg}")
         
         #if the option to save key to a file exists, save it to a file.
         
@@ -239,9 +253,9 @@ class Bank_security():
             print(f"Error parsing from file:\t {e}")
     
             
-            
-test = Bank_security()
-test.run_program()
+if (__name__ == "main"):
+    test = Bank_security()
+    test.run_program()
 
 
 

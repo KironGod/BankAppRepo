@@ -439,3 +439,99 @@
 2025-02-17 15:49:12,622 - INFO - 10.12.114.148 - - [17/Feb/2025 15:49:12] "[32mGET /logout HTTP/1.1[0m" 302 -
 2025-02-17 15:49:12,635 - INFO - 10.12.114.148 - - [17/Feb/2025 15:49:12] "GET / HTTP/1.1" 200 -
 2025-02-17 15:49:12,673 - INFO - 10.12.114.148 - - [17/Feb/2025 15:49:12] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-10 10:25:53,595 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.13.13.126:5000
+2025-03-10 10:25:53,596 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-10 10:25:53,599 - INFO -  * Restarting with stat
+2025-03-10 10:25:54,030 - WARNING -  * Debugger is active!
+2025-03-10 10:25:54,086 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:27:44,405 - INFO - 127.0.0.1 - - [10/Mar/2025 10:27:44] "GET / HTTP/1.1" 200 -
+2025-03-10 10:27:44,852 - INFO - 127.0.0.1 - - [10/Mar/2025 10:27:44] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-10 10:27:44,864 - INFO - 127.0.0.1 - - [10/Mar/2025 10:27:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-10 10:27:48,256 - INFO - 127.0.0.1 - - [10/Mar/2025 10:27:48] "GET /create_account HTTP/1.1" 200 -
+2025-03-10 10:28:34,747 - INFO - User newuser registered successfully.
+2025-03-10 10:28:34,748 - INFO - 127.0.0.1 - - [10/Mar/2025 10:28:34] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-10 10:28:34,753 - INFO - 127.0.0.1 - - [10/Mar/2025 10:28:34] "GET / HTTP/1.1" 200 -
+2025-03-10 10:28:35,165 - INFO - 127.0.0.1 - - [10/Mar/2025 10:28:35] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-10 10:28:36,466 - INFO - 127.0.0.1 - - [10/Mar/2025 10:28:36] "GET /login HTTP/1.1" 200 -
+2025-03-10 10:28:42,478 - INFO - User newuser logged in successfully.
+2025-03-10 10:28:42,479 - INFO - 127.0.0.1 - - [10/Mar/2025 10:28:42] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-10 10:28:42,516 - INFO - 127.0.0.1 - - [10/Mar/2025 10:28:42] "GET /dashboard HTTP/1.1" 200 -
+2025-03-10 10:28:56,537 - INFO - User newuser deposited $5.0.
+2025-03-10 10:28:56,538 - INFO - 127.0.0.1 - - [10/Mar/2025 10:28:56] "[32mPOST /deposit HTTP/1.1[0m" 302 -
+2025-03-10 10:28:56,545 - INFO - 127.0.0.1 - - [10/Mar/2025 10:28:56] "GET /dashboard HTTP/1.1" 200 -
+2025-03-10 10:29:22,815 - INFO - 127.0.0.1 - - [10/Mar/2025 10:29:22] "[32mPOST /make_purchase HTTP/1.1[0m" 302 -
+2025-03-10 10:29:23,136 - INFO - 127.0.0.1 - - [10/Mar/2025 10:29:23] "GET /dashboard HTTP/1.1" 200 -
+2025-03-10 10:29:50,632 - INFO - User newuser made a purchase: boogers for $4.0.
+2025-03-10 10:29:50,633 - INFO - 127.0.0.1 - - [10/Mar/2025 10:29:50] "[32mPOST /make_purchase HTTP/1.1[0m" 302 -
+2025-03-10 10:29:50,649 - INFO - 127.0.0.1 - - [10/Mar/2025 10:29:50] "GET /dashboard HTTP/1.1" 200 -
+2025-03-10 10:32:42,235 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-10 10:32:42,288 - INFO -  * Restarting with stat
+2025-03-10 10:32:42,774 - WARNING -  * Debugger is active!
+2025-03-10 10:32:42,778 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:32:51,837 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-10 10:32:51,877 - INFO -  * Restarting with stat
+2025-03-10 10:32:52,406 - WARNING -  * Debugger is active!
+2025-03-10 10:32:52,410 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:33:07,465 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-10 10:33:07,512 - INFO -  * Restarting with stat
+2025-03-10 10:33:07,990 - WARNING -  * Debugger is active!
+2025-03-10 10:33:07,994 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:33:27,058 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-10 10:33:27,112 - INFO -  * Restarting with stat
+2025-03-10 10:33:27,700 - WARNING -  * Debugger is active!
+2025-03-10 10:33:27,707 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:33:34,742 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-10 10:33:34,780 - INFO -  * Restarting with stat
+2025-03-10 10:33:35,307 - WARNING -  * Debugger is active!
+2025-03-10 10:33:35,313 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:33:40,342 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-10 10:33:40,388 - INFO -  * Restarting with stat
+2025-03-10 10:33:40,902 - WARNING -  * Debugger is active!
+2025-03-10 10:33:40,906 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:33:43,930 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-10 10:33:43,971 - INFO -  * Restarting with stat
+2025-03-10 10:33:44,474 - WARNING -  * Debugger is active!
+2025-03-10 10:33:44,479 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:34:17,584 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\Bank_security.py', reloading
+2025-03-10 10:34:17,646 - INFO -  * Restarting with stat
+2025-03-10 10:34:18,173 - WARNING -  * Debugger is active!
+2025-03-10 10:34:18,179 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:34:19,200 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-10 10:34:19,288 - INFO -  * Restarting with stat
+2025-03-10 10:34:19,875 - WARNING -  * Debugger is active!
+2025-03-10 10:34:19,879 - INFO -  * Debugger PIN: 143-930-352
+2025-03-10 10:34:20,900 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\SecureBankGui.py', reloading
+2025-03-10 10:34:20,985 - INFO -  * Restarting with stat
+2025-03-10 10:34:21,475 - WARNING -  * Debugger is active!
+2025-03-10 10:34:21,479 - INFO -  * Debugger PIN: 143-930-352
+2025-03-13 12:38:46,084 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.4.224:5000
+2025-03-13 12:38:46,120 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-13 12:38:46,121 - INFO -  * Restarting with stat
+2025-03-13 12:38:46,496 - WARNING -  * Debugger is active!
+2025-03-13 12:38:46,496 - INFO -  * Debugger PIN: 300-307-651
+2025-03-13 12:40:51,800 - INFO - 127.0.0.1 - - [13/Mar/2025 12:40:51] "GET / HTTP/1.1" 200 -
+2025-03-13 12:40:51,898 - INFO - 127.0.0.1 - - [13/Mar/2025 12:40:51] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-13 12:40:51,906 - INFO - 127.0.0.1 - - [13/Mar/2025 12:40:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-13 12:42:44,884 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.4.224:5000
+2025-03-13 12:42:44,885 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-13 12:42:44,886 - INFO -  * Restarting with stat
+2025-03-13 12:42:45,258 - WARNING -  * Debugger is active!
+2025-03-13 12:42:45,258 - INFO -  * Debugger PIN: 300-307-651
+2025-03-13 12:43:03,694 - INFO - 127.0.0.1 - - [13/Mar/2025 12:43:03] "GET / HTTP/1.1" 200 -
+2025-03-13 12:43:03,786 - INFO - 127.0.0.1 - - [13/Mar/2025 12:43:03] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-13 12:43:52,746 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-13 12:43:52,796 - INFO -  * Restarting with stat
+2025-03-13 12:43:53,278 - WARNING -  * Debugger is active!
+2025-03-13 12:43:53,281 - INFO -  * Debugger PIN: 300-307-651
+2025-03-13 13:27:56,475 - INFO - 127.0.0.1 - - [13/Mar/2025 13:27:56] "GET / HTTP/1.1" 200 -
+2025-03-13 13:27:56,867 - INFO - 127.0.0.1 - - [13/Mar/2025 13:27:56] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-13 13:27:56,883 - INFO - 127.0.0.1 - - [13/Mar/2025 13:27:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

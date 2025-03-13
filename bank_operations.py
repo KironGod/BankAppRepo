@@ -1,10 +1,11 @@
 # bank_operations.py
 import os
 import sqlite3
-import bcrypt
 from cryptography.fernet import Fernet
 import logging
-
+import Bank_security
+import bcrypt
+##Keep Drew's script to make an AES key in the same dir.
 logging.basicConfig(filename='securebank.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class Item:
@@ -19,11 +20,7 @@ class BankAccount:
         self.ledger = []
         self.logged_in_user = None
 
-        # Initialize encryption
-        key = os.getenv('ENCRYPTION_KEY')
-        if not key:
-            raise ValueError("No encryption key found in environment variables")
-        self.cipher_suite = Fernet(key.encode())
+        
 
     def _save_ledger_entry(self, entry):
         try:
@@ -118,6 +115,10 @@ class BankAccount:
 def register_user(username, password, age, first_name, last_name, account_type, account_number, card_number, credit_score, email, phone_number, address):
     dbconn = None
     try:
+        security = Bank_security()
+        security.key_size = 256
+        security.mode = "CBC"
+        secure_username = security.encrypt_CBC()
         script_dir = os.path.dirname(os.path.abspath(__file__))
         db_path = os.getenv('DB_PATH', os.path.join(script_dir, 'SecureBankDB.db'))
         print(f"Database path: {db_path}")  # Debug: Print the database path

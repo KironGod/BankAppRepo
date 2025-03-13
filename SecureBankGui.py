@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from bank_operations import BankAccount, register_user
+from Bank_security import Bank_security
 import os
 import sqlite3
 import logging
@@ -140,4 +141,6 @@ def make_purchase():
 
 # Run the Flask app
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=True)
+    security = Bank_security()
+    security.generate_certificate()
+    app.run(host="0.0.0.0", debug=True, ssl_context = (os.path.abspath("server.crt"), os.path.abspath("server.key")))
