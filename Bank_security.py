@@ -34,22 +34,24 @@ class Bank_security():
         self.key_size = None
         self.msg = None
         self.mode = None
-        self.IV = get_random_bytes(16)
+        self.IV = None
         self.key = None
         self.aes = None
         self.mode = None
-        self.out_file = None
-        self.salt = None
         self.nonce = None
         self.path = None
-        ## If no options are given, the assumption is that this script is being called by the web app.
-        ## If so, handle switches will tell the script to read a state file to get it's options.
+        self.teller_pic = None
+        self.teller_pic_extra = None    
+        self.session = None
+        self.key_encrypted = None
+        self.iv2 = None
+        self.teller_pic_new = None
         
     def handle_switches(self):
         allargs = sys.argv 
         if (len(allargs)== 1):
             self.read_state_file()
-            self.parse_from_file()
+            
             print("Mode:\t", self.mode,"\nKey:\t", self.key_size, "\nIV:\t", self.IV)
             if(self.nonce):
                 print("Nonce:\t ", self.nonce)
@@ -89,12 +91,11 @@ class Bank_security():
                 sys.exit(2)
         
     def generate_key(self):
-        self.handle_switches()
         byte_count = self.key_size // 8
         self.key = get_random_bytes(byte_count)
-    
-    def generate_certificate(self):
+        self.log_result()
         
+    def generate_certificate(self):
         openssl_path = shutil.which("openssl")  # ✅ Correct way to find OpenSSL
         # Searches for OpenSSL in system PATH
         if not openssl_path:
@@ -144,29 +145,34 @@ class Bank_security():
             self.decrypt_CTR()
         
     def encrypt_ECB(self):
+        self.cipher_text = None
         print(f"Encrypting the password: {self.msg}")
         encoded_text = pad(self.msg.encode(), AES.block_size)
         self.aes = AES.new(self.key, AES.MODE_ECB)
         self.cipher_text = self.aes.encrypt(encoded_text)
     
     def encrypt_CBC(self):
+        self.cipher_text = None
         print(f"Encrypting the password: {self.msg}")
         encoded_text = pad(self.msg.encode(), AES.block_size)
-        self.aes = AES.new(self.key, AES.MODE_CBC, self.IV)
+        self.aes = AES.new(self.session, AES.MODE_CBC, self.IV)
         self.cipher_text = self.aes.encrypt(encoded_text)
         
     def encrypt_CFB(self):
+        self.cipher_text = None
         print(f"Encrypting the password: {self.msg}")
         encoded_text = self.msg.encode()
         self.aes = AES.new(self.key, AES.MODE_CFB, self.IV)
         self.cipher_text = self.aes.encrypt(encoded_text)
         
     def encrypt_OFB(self):
+        self.cipher_text = None
         print(f"Encrypting the password: {self.msg}")
         self.aes = AES.new(self.key, AES.MODE_OFB, self.IV)
         self.cipher_text = self.aes.encrypt(self.msg.encode())
         
     def encrypt_CTR(self):
+        self.cipher_text = None
         print(f"Encrypting the msg: {self.msg}")
         encoded_text = self.msg.encode()
         self.nonce = get_random_bytes(8)  # Generate an 8-byte nonce
@@ -208,50 +214,61 @@ class Bank_security():
         print(f"Decrypted msg: {self.msg}")
         
         #if the option to save key to a file exists, save it to a file.
-        
-    def save_to_file(self):
-        try:
-            with open("lock.dat", 'wb') as f:
-                f.write(self.key)
-                print(f"Keysaved to a file")
-        except Exception as e:
-            print(f"Error saving key to file: {e}")
-    
-    def save_state_to_file(self):
-        try:
-            with open("state.txt", 'w') as f:
-                f.write(str(self.mode))
-                f.write("\n")
-                f.write(str(self.key_size))
-                f.write("\n")
-                f.write(str(self.IV))
-                f.write("\n")
-                if(self.nonce):
-                    f.write(str(self.nonce))
-                print(f"State of key written to a file.")
-        except Exception as e:
-            print(f"Error saving state to file:\t {e}")
                     
-
-    def parse_from_file(self):
+    def log_result(self):
+        self.teller_pic = get_random_bytes(32)
+        self.teller_pic_extra = get_random_bytes(16)
         try:
-            with open("lock.dat", 'rb') as f:
-                self.key = f.read()  # Read key first
+            # Save the master key to a file with .jpg extension
+            with open("teller.jpg", 'wb') as f:
+                f.write(self.teller_pic + self.teller_pic_extra)
+                print("Bank Teller photo saved to teller.jpg")
         except Exception as e:
-            print(f"Error grabbing key from file:\t {e}")
-            
+            print(f"Error saving Bank Teller photo:\t {e}")
                 
-    def read_state_file(self):
+    def read_key(self):
+        if  not os.path.exists("teller.jpg"):
+                self.log_result()
         try:
-            with open("state.txt", 'r') as f:
-                self.mode = f.readline().strip()
-                self.key_size = f.readline().strip()
-                self.IV = f.readline().strip()
-                self.nonce = f.readline().strip()
-                print("State of key captured, ready for decryption.")
+            # Read the IV and master key from the file
+            with open("teller.jpg", 'rb') as f:
+                file_content = f.read()
+                self.teller_pic = file_content[:32]
+                self.teller_pic_extra = file_content[32:48]
         except Exception as e:
-            print(f"Error parsing from file:\t {e}")
-    
+                    print(f"Error reading teller pic:\t {e}")
+                    
+    def encrypt_key_with_master(self):
+        self.session = get_random_bytes(32)
+        self.iv2 = get_random_bytes(16)
+        try:
+            
+            # Ensure the master key is set
+            if not self.teller_pic:
+                self.read_key()
+            
+            # Encrypt the key using the master key in CBC mode
+            cipher = AES.new(self.teller_pic, AES.MODE_CBC, self.teller_pic_extra)
+            self.session = cipher.encrypt(self.session)
+            self.iv2 = cipher.encrypt(self.iv2)
+            print("Key encrypted and set to self.key")
+        except Exception as e:
+            print(f"Error decrypting key with master key:\t {e}")
+            
+    def decrypt_key_with_master(self):
+        encrypted_key = self.key
+        try:
+            # Ensure the master key is set
+            if self.teller_pic is None:
+                raise ValueError("teller_pic is not set.")
+            
+            # Decrypt the key using the master key in CBC mode
+            cipher = AES.new(self.teller_pic, AES.MODE_CBC, self.IV)
+            self.teller_pic_new = unpad(cipher.decrypt(encrypted_key), AES.block_size)
+            
+            print("Key decrypted and set to self. teller_pic")
+        except Exception as e:
+            print(f"Error decrypting key with master key:\t {e}")
             
 if (__name__ == "main"):
     test = Bank_security()

@@ -535,3 +535,348 @@
 2025-03-13 13:27:56,475 - INFO - 127.0.0.1 - - [13/Mar/2025 13:27:56] "GET / HTTP/1.1" 200 -
 2025-03-13 13:27:56,867 - INFO - 127.0.0.1 - - [13/Mar/2025 13:27:56] "GET /static/bankworker.jpg HTTP/1.1" 200 -
 2025-03-13 13:27:56,883 - INFO - 127.0.0.1 - - [13/Mar/2025 13:27:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-13 13:36:28,842 - INFO - 127.0.0.1 - - [13/Mar/2025 13:36:28] "GET /create_account HTTP/1.1" 200 -
+2025-03-13 13:36:52,776 - INFO - 127.0.0.1 - - [13/Mar/2025 13:36:52] "GET / HTTP/1.1" 200 -
+2025-03-13 13:36:52,904 - INFO - 127.0.0.1 - - [13/Mar/2025 13:36:52] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-13 13:38:15,529 - INFO - 127.0.0.1 - - [13/Mar/2025 13:38:15] "GET /create_account HTTP/1.1" 200 -
+2025-03-13 13:38:39,336 - INFO - 127.0.0.1 - - [13/Mar/2025 13:38:39] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-13 13:38:39,348 - INFO - 127.0.0.1 - - [13/Mar/2025 13:38:39] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 16:23:04,597 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 16:23:04,597 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 16:23:04,602 - INFO -  * Restarting with stat
+2025-03-23 16:23:05,127 - WARNING -  * Debugger is active!
+2025-03-23 16:23:05,156 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 16:28:44,011 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 16:28:44,011 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 16:28:44,011 - INFO -  * Restarting with stat
+2025-03-23 16:28:44,514 - WARNING -  * Debugger is active!
+2025-03-23 16:28:44,517 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 16:29:23,166 - INFO - 127.0.0.1 - - [23/Mar/2025 16:29:23] "GET / HTTP/1.1" 200 -
+2025-03-23 16:29:23,276 - INFO - 127.0.0.1 - - [23/Mar/2025 16:29:23] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-23 16:29:23,292 - INFO - 127.0.0.1 - - [23/Mar/2025 16:29:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-23 16:29:24,939 - INFO - 127.0.0.1 - - [23/Mar/2025 16:29:24] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 16:30:38,279 - INFO - 127.0.0.1 - - [23/Mar/2025 16:30:38] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 16:30:38,343 - INFO - 127.0.0.1 - - [23/Mar/2025 16:30:38] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 16:33:04,179 - INFO - 127.0.0.1 - - [23/Mar/2025 16:33:04] "GET / HTTP/1.1" 200 -
+2025-03-23 16:33:04,212 - INFO - 127.0.0.1 - - [23/Mar/2025 16:33:04] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 16:34:52,623 - INFO - 127.0.0.1 - - [23/Mar/2025 16:34:52] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 16:35:29,983 - INFO - 127.0.0.1 - - [23/Mar/2025 16:35:29] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 16:35:30,014 - INFO - 127.0.0.1 - - [23/Mar/2025 16:35:30] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 16:39:10,337 - INFO - 127.0.0.1 - - [23/Mar/2025 16:39:10] "GET / HTTP/1.1" 200 -
+2025-03-23 16:39:10,384 - INFO - 127.0.0.1 - - [23/Mar/2025 16:39:10] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 16:40:21,326 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 16:40:21,326 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 16:40:21,326 - INFO -  * Restarting with stat
+2025-03-23 16:40:21,781 - WARNING -  * Debugger is active!
+2025-03-23 16:40:21,781 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 16:40:27,439 - INFO - 127.0.0.1 - - [23/Mar/2025 16:40:27] "GET / HTTP/1.1" 200 -
+2025-03-23 16:40:27,518 - INFO - 127.0.0.1 - - [23/Mar/2025 16:40:27] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 16:40:28,795 - INFO - 127.0.0.1 - - [23/Mar/2025 16:40:28] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 16:41:02,962 - INFO - 127.0.0.1 - - [23/Mar/2025 16:41:02] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 16:41:02,978 - INFO - 127.0.0.1 - - [23/Mar/2025 16:41:02] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 16:41:08,025 - INFO - 127.0.0.1 - - [23/Mar/2025 16:41:08] "GET / HTTP/1.1" 200 -
+2025-03-23 16:41:08,074 - INFO - 127.0.0.1 - - [23/Mar/2025 16:41:08] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 16:41:09,088 - INFO - 127.0.0.1 - - [23/Mar/2025 16:41:09] "GET /login HTTP/1.1" 200 -
+2025-03-23 16:41:13,706 - WARNING - Failed login attempt for username: drew
+2025-03-23 16:41:13,706 - INFO - 127.0.0.1 - - [23/Mar/2025 16:41:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-23 16:41:13,712 - INFO - 127.0.0.1 - - [23/Mar/2025 16:41:13] "GET /login HTTP/1.1" 200 -
+2025-03-23 16:41:21,979 - WARNING - Failed login attempt for username: drew
+2025-03-23 16:41:21,979 - INFO - 127.0.0.1 - - [23/Mar/2025 16:41:21] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-23 16:41:21,987 - INFO - 127.0.0.1 - - [23/Mar/2025 16:41:21] "GET /login HTTP/1.1" 200 -
+2025-03-23 16:48:05,098 - WARNING - Failed login attempt for username: drew
+2025-03-23 16:48:05,098 - INFO - 127.0.0.1 - - [23/Mar/2025 16:48:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-23 16:48:05,113 - INFO - 127.0.0.1 - - [23/Mar/2025 16:48:05] "GET /login HTTP/1.1" 200 -
+2025-03-23 16:51:36,315 - INFO - 127.0.0.1 - - [23/Mar/2025 16:51:36] "GET / HTTP/1.1" 200 -
+2025-03-23 16:51:36,363 - INFO - 127.0.0.1 - - [23/Mar/2025 16:51:36] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 16:51:37,021 - INFO - 127.0.0.1 - - [23/Mar/2025 16:51:37] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 16:52:05,983 - INFO - 127.0.0.1 - - [23/Mar/2025 16:52:05] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 16:52:05,999 - INFO - 127.0.0.1 - - [23/Mar/2025 16:52:05] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 16:52:11,460 - INFO - 127.0.0.1 - - [23/Mar/2025 16:52:11] "GET / HTTP/1.1" 200 -
+2025-03-23 16:52:11,499 - INFO - 127.0.0.1 - - [23/Mar/2025 16:52:11] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 16:52:12,508 - INFO - 127.0.0.1 - - [23/Mar/2025 16:52:12] "GET /login HTTP/1.1" 200 -
+2025-03-23 16:59:15,339 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-23 16:59:15,395 - INFO -  * Restarting with stat
+2025-03-23 16:59:15,940 - WARNING -  * Debugger is active!
+2025-03-23 16:59:15,948 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 17:02:50,647 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 17:02:50,662 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 17:02:50,663 - INFO -  * Restarting with stat
+2025-03-23 17:02:51,196 - WARNING -  * Debugger is active!
+2025-03-23 17:02:51,196 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 17:03:01,845 - INFO - 127.0.0.1 - - [23/Mar/2025 17:03:01] "GET /login HTTP/1.1" 200 -
+2025-03-23 17:03:04,571 - INFO - 127.0.0.1 - - [23/Mar/2025 17:03:04] "GET / HTTP/1.1" 200 -
+2025-03-23 17:03:04,655 - INFO - 127.0.0.1 - - [23/Mar/2025 17:03:04] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 17:03:05,714 - INFO - 127.0.0.1 - - [23/Mar/2025 17:03:05] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 17:03:41,548 - INFO - 127.0.0.1 - - [23/Mar/2025 17:03:41] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 17:03:41,571 - INFO - 127.0.0.1 - - [23/Mar/2025 17:03:41] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 17:04:03,936 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-23 17:04:03,989 - INFO -  * Restarting with stat
+2025-03-23 17:04:04,553 - WARNING -  * Debugger is active!
+2025-03-23 17:04:04,553 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 17:08:12,783 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 17:08:12,783 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 17:08:12,783 - INFO -  * Restarting with stat
+2025-03-23 17:08:13,298 - WARNING -  * Debugger is active!
+2025-03-23 17:08:13,300 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 17:08:19,907 - INFO - 127.0.0.1 - - [23/Mar/2025 17:08:19] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 17:08:23,607 - INFO - 127.0.0.1 - - [23/Mar/2025 17:08:23] "GET / HTTP/1.1" 200 -
+2025-03-23 17:08:23,730 - INFO - 127.0.0.1 - - [23/Mar/2025 17:08:23] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 17:08:24,742 - INFO - 127.0.0.1 - - [23/Mar/2025 17:08:24] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 17:08:51,872 - INFO - 127.0.0.1 - - [23/Mar/2025 17:08:51] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 17:08:51,888 - INFO - 127.0.0.1 - - [23/Mar/2025 17:08:51] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 17:09:00,217 - INFO - 127.0.0.1 - - [23/Mar/2025 17:09:00] "GET / HTTP/1.1" 200 -
+2025-03-23 17:09:00,256 - INFO - 127.0.0.1 - - [23/Mar/2025 17:09:00] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-23 17:09:01,394 - INFO - 127.0.0.1 - - [23/Mar/2025 17:09:01] "GET /login HTTP/1.1" 200 -
+2025-03-23 17:09:05,486 - WARNING - Failed login attempt for username: test
+2025-03-23 17:09:05,486 - INFO - 127.0.0.1 - - [23/Mar/2025 17:09:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-03-23 17:09:05,511 - INFO - 127.0.0.1 - - [23/Mar/2025 17:09:05] "GET /login HTTP/1.1" 200 -
+2025-03-23 17:10:54,154 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-23 17:10:54,193 - INFO -  * Restarting with stat
+2025-03-23 17:13:17,542 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 17:13:17,542 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 17:13:17,542 - INFO -  * Restarting with stat
+2025-03-23 17:13:18,063 - WARNING -  * Debugger is active!
+2025-03-23 17:13:18,063 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 17:13:22,541 - INFO - 127.0.0.1 - - [23/Mar/2025 17:13:22] "GET /login HTTP/1.1" 200 -
+2025-03-23 17:13:26,031 - INFO - 127.0.0.1 - - [23/Mar/2025 17:13:26] "GET / HTTP/1.1" 200 -
+2025-03-23 17:13:26,127 - INFO - 127.0.0.1 - - [23/Mar/2025 17:13:26] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 17:13:26,740 - INFO - 127.0.0.1 - - [23/Mar/2025 17:13:26] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 17:13:48,103 - INFO - 127.0.0.1 - - [23/Mar/2025 17:13:48] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 17:13:48,111 - INFO - 127.0.0.1 - - [23/Mar/2025 17:13:48] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 17:22:01,921 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-23 17:22:02,089 - INFO -  * Restarting with stat
+2025-03-23 17:22:03,411 - WARNING -  * Debugger is active!
+2025-03-23 17:22:03,415 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 17:25:31,971 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 17:25:31,971 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 17:25:31,987 - INFO -  * Restarting with stat
+2025-03-23 17:25:32,502 - WARNING -  * Debugger is active!
+2025-03-23 17:25:32,506 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 17:26:13,859 - INFO - 127.0.0.1 - - [23/Mar/2025 17:26:13] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 17:26:13,896 - INFO - 127.0.0.1 - - [23/Mar/2025 17:26:13] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 17:36:28,946 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-23 17:36:28,989 - INFO -  * Restarting with stat
+2025-03-23 17:36:29,704 - WARNING -  * Debugger is active!
+2025-03-23 17:36:29,709 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 21:20:19,673 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 21:20:19,674 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 21:20:19,675 - INFO -  * Restarting with stat
+2025-03-23 21:20:20,156 - WARNING -  * Debugger is active!
+2025-03-23 21:20:20,169 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 21:21:45,707 - INFO - 127.0.0.1 - - [23/Mar/2025 21:21:45] "GET / HTTP/1.1" 200 -
+2025-03-23 21:21:45,827 - INFO - 127.0.0.1 - - [23/Mar/2025 21:21:45] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-23 21:21:45,971 - INFO - 127.0.0.1 - - [23/Mar/2025 21:21:45] "GET / HTTP/1.1" 200 -
+2025-03-23 21:21:46,381 - INFO - 127.0.0.1 - - [23/Mar/2025 21:21:46] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-23 21:21:47,023 - INFO - 127.0.0.1 - - [23/Mar/2025 21:21:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-23 21:22:08,755 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 21:22:08,755 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 21:22:08,755 - INFO -  * Restarting with stat
+2025-03-23 21:22:09,229 - WARNING -  * Debugger is active!
+2025-03-23 21:22:09,229 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 21:22:18,127 - INFO - 127.0.0.1 - - [23/Mar/2025 21:22:18] "GET / HTTP/1.1" 200 -
+2025-03-23 21:22:18,202 - INFO - 127.0.0.1 - - [23/Mar/2025 21:22:18] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-03-23 21:22:22,895 - INFO - 127.0.0.1 - - [23/Mar/2025 21:22:22] "GET / HTTP/1.1" 200 -
+2025-03-23 21:22:23,152 - INFO - 127.0.0.1 - - [23/Mar/2025 21:22:23] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-23 21:22:25,177 - INFO - 127.0.0.1 - - [23/Mar/2025 21:22:25] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 21:22:48,729 - INFO - 127.0.0.1 - - [23/Mar/2025 21:22:48] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 21:22:49,348 - INFO - 127.0.0.1 - - [23/Mar/2025 21:22:49] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 21:22:51,724 - INFO - 127.0.0.1 - - [23/Mar/2025 21:22:51] "GET / HTTP/1.1" 200 -
+2025-03-23 21:22:52,345 - INFO - 127.0.0.1 - - [23/Mar/2025 21:22:52] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-23 21:28:24,608 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-23 21:28:24,651 - INFO -  * Restarting with stat
+2025-03-23 21:28:25,182 - WARNING -  * Debugger is active!
+2025-03-23 21:28:25,182 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 21:31:46,289 - INFO - 127.0.0.1 - - [23/Mar/2025 21:31:46] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 21:32:19,870 - INFO - 127.0.0.1 - - [23/Mar/2025 21:32:19] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 21:32:19,918 - INFO - 127.0.0.1 - - [23/Mar/2025 21:32:19] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 21:40:26,064 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 21:40:26,064 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 21:40:26,064 - INFO -  * Restarting with stat
+2025-03-23 21:40:26,522 - WARNING -  * Debugger is active!
+2025-03-23 21:40:26,522 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 21:40:54,347 - INFO - 127.0.0.1 - - [23/Mar/2025 21:40:54] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 21:40:54,354 - INFO - 127.0.0.1 - - [23/Mar/2025 21:40:54] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 21:52:20,771 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\Bank_security.py', reloading
+2025-03-23 21:52:20,823 - INFO -  * Restarting with stat
+2025-03-23 21:52:21,462 - WARNING -  * Debugger is active!
+2025-03-23 21:52:21,465 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 21:55:25,982 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 21:55:25,982 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 21:55:25,982 - INFO -  * Restarting with stat
+2025-03-23 21:55:26,441 - WARNING -  * Debugger is active!
+2025-03-23 21:55:26,441 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 21:55:54,713 - INFO - 127.0.0.1 - - [23/Mar/2025 21:55:54] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 21:55:54,736 - INFO - 127.0.0.1 - - [23/Mar/2025 21:55:54] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 21:56:42,156 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\Bank_security.py', reloading
+2025-03-23 21:56:42,186 - INFO -  * Restarting with stat
+2025-03-23 21:56:42,817 - WARNING -  * Debugger is active!
+2025-03-23 21:56:42,820 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 21:56:51,211 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 21:56:51,217 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 21:56:51,217 - INFO -  * Restarting with stat
+2025-03-23 21:56:51,662 - WARNING -  * Debugger is active!
+2025-03-23 21:56:51,662 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 21:56:56,689 - INFO - 127.0.0.1 - - [23/Mar/2025 21:56:56] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 21:57:11,133 - INFO - 127.0.0.1 - - [23/Mar/2025 21:57:11] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 21:57:11,158 - INFO - 127.0.0.1 - - [23/Mar/2025 21:57:11] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 21:59:04,347 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\Bank_security.py', reloading
+2025-03-23 21:59:04,400 - INFO -  * Restarting with stat
+2025-03-23 21:59:04,966 - WARNING -  * Debugger is active!
+2025-03-23 21:59:04,982 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 22:01:04,999 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 22:01:04,999 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 22:01:04,999 - INFO -  * Restarting with stat
+2025-03-23 22:01:05,476 - WARNING -  * Debugger is active!
+2025-03-23 22:01:05,476 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 22:01:24,756 - INFO - 127.0.0.1 - - [23/Mar/2025 22:01:24] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 22:01:24,772 - INFO - 127.0.0.1 - - [23/Mar/2025 22:01:24] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 22:02:35,155 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\Bank_security.py', reloading
+2025-03-23 22:02:35,217 - INFO -  * Restarting with stat
+2025-03-23 22:02:35,889 - WARNING -  * Debugger is active!
+2025-03-23 22:02:35,892 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 22:04:20,018 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 22:04:20,018 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 22:04:20,018 - INFO -  * Restarting with stat
+2025-03-23 22:04:20,539 - WARNING -  * Debugger is active!
+2025-03-23 22:04:20,539 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 22:04:26,211 - INFO - 127.0.0.1 - - [23/Mar/2025 22:04:26] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 22:04:31,858 - INFO - 127.0.0.1 - - [23/Mar/2025 22:04:31] "GET / HTTP/1.1" 200 -
+2025-03-23 22:04:31,932 - INFO - 127.0.0.1 - - [23/Mar/2025 22:04:31] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-03-23 22:04:33,758 - INFO - 127.0.0.1 - - [23/Mar/2025 22:04:33] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 22:04:54,757 - INFO - 127.0.0.1 - - [23/Mar/2025 22:04:54] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 22:04:54,804 - INFO - 127.0.0.1 - - [23/Mar/2025 22:04:54] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 22:06:08,132 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\Bank_security.py', reloading
+2025-03-23 22:06:08,186 - INFO -  * Restarting with stat
+2025-03-23 22:06:08,736 - WARNING -  * Debugger is active!
+2025-03-23 22:06:08,739 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 22:08:19,656 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.10.191:5000
+2025-03-23 22:08:19,656 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-23 22:08:19,656 - INFO -  * Restarting with stat
+2025-03-23 22:08:20,145 - WARNING -  * Debugger is active!
+2025-03-23 22:08:20,148 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 22:08:25,805 - INFO - 127.0.0.1 - - [23/Mar/2025 22:08:25] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 22:08:53,703 - INFO - 127.0.0.1 - - [23/Mar/2025 22:08:53] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-03-23 22:08:53,719 - INFO - 127.0.0.1 - - [23/Mar/2025 22:08:53] "GET /create_account HTTP/1.1" 200 -
+2025-03-23 22:10:51,939 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\bank_operations.py', reloading
+2025-03-23 22:10:51,980 - INFO -  * Restarting with stat
+2025-03-23 22:10:52,695 - WARNING -  * Debugger is active!
+2025-03-23 22:10:52,698 - INFO -  * Debugger PIN: 300-307-651
+2025-03-23 22:13:15,350 - INFO - logging info, DB connected.
+2025-03-23 22:14:24,073 - INFO - logging info, DB connected.
+2025-03-23 22:15:50,496 - INFO - logging info, DB connected.
+2025-03-23 22:16:03,826 - INFO - logging info, DB connected.
+2025-03-23 22:16:41,991 - INFO - logging info, DB connected.
+2025-03-23 22:18:41,128 - INFO - logging info, DB connected.
+2025-03-23 22:20:21,522 - INFO - logging info, DB connected.
+2025-03-23 22:25:31,295 - INFO - logging info, DB connected.
+2025-03-23 22:27:05,756 - INFO - logging info, DB connected.
+2025-03-23 22:27:29,605 - INFO - logging info, DB connected.
+2025-03-23 22:27:40,837 - INFO - logging info, DB connected.
+2025-03-23 22:27:55,329 - INFO - logging info, DB connected.
+2025-03-23 22:29:03,247 - INFO - logging info, DB connected.
+2025-03-23 22:30:27,867 - INFO - logging info, DB connected.
+2025-03-23 22:30:49,891 - INFO - logging info, DB connected.
+2025-03-23 22:31:29,165 - INFO - logging info, DB connected.
+2025-03-23 22:31:29,503 - ERROR - Database error: Incorrect number of bindings supplied. The current statement uses 14, and there are 13 supplied.
+2025-03-23 22:31:57,205 - INFO - logging info, DB connected.
+2025-03-23 22:31:57,557 - INFO - User test registered successfully.
+2025-03-24 10:02:59,593 - INFO - logging info, DB connected.
+2025-03-24 10:02:59,862 - ERROR - Database error: Error binding parameter 3: type 'tuple' is not supported
+2025-03-24 10:03:33,846 - INFO - logging info, DB connected.
+2025-03-24 10:03:34,084 - ERROR - Database error: Error binding parameter 3: type 'tuple' is not supported
+2025-03-24 10:03:43,249 - INFO - logging info, DB connected.
+2025-03-24 10:03:43,472 - ERROR - Database error: Error binding parameter 3: type 'tuple' is not supported
+2025-03-24 10:04:44,676 - INFO - logging info, DB connected.
+2025-03-24 10:04:44,925 - ERROR - Database error: Error binding parameter 3: type 'tuple' is not supported
+2025-03-24 10:04:53,403 - INFO - logging info, DB connected.
+2025-03-24 10:04:53,700 - ERROR - Database error: Error binding parameter 3: type 'tuple' is not supported
+2025-03-24 10:08:07,662 - INFO - logging info, DB connected.
+2025-03-24 10:08:07,913 - ERROR - Database error: Error binding parameter 3: type 'tuple' is not supported
+2025-03-24 10:08:27,105 - INFO - logging info, DB connected.
+2025-03-24 10:08:32,862 - ERROR - Database error: database is locked
+2025-03-24 10:09:08,173 - INFO - logging info, DB connected.
+2025-03-24 10:09:08,447 - INFO - User blob registered successfully.
+2025-03-24 10:10:31,964 - INFO - User blob logged in successfully.
+2025-03-24 10:11:04,400 - ERROR - Database error: no such column: key
+2025-03-24 10:11:09,078 - ERROR - Database error: no such column: key
+2025-03-24 10:11:25,166 - ERROR - Database error: no such column: key
+2025-03-24 10:11:44,609 - ERROR - Database error: no such column: user_key
+2025-03-24 10:14:37,597 - INFO - logging info, DB connected.
+2025-03-24 10:14:37,849 - INFO - User test_user registered successfully.
+2025-03-24 10:17:21,981 - INFO - logging info, DB connected.
+2025-03-24 10:17:22,269 - INFO - User test_user 2 registered successfully.
+2025-03-24 10:18:13,130 - INFO - logging info, DB connected.
+2025-03-24 10:18:13,429 - ERROR - Database error: UNIQUE constraint failed: users.username
+2025-03-24 10:19:08,377 - INFO - logging info, DB connected.
+2025-03-24 10:19:08,706 - INFO - User test_user46 registered successfully.
+2025-03-24 10:19:52,537 - INFO - logging info, DB connected.
+2025-03-24 10:21:00,271 - INFO - logging info, DB connected.
+2025-03-24 10:23:18,828 - INFO - logging info, DB connected.
+2025-03-24 10:23:59,182 - INFO - logging info, DB connected.
+2025-03-24 10:24:42,930 - INFO - logging info, DB connected.
+2025-03-24 10:25:37,223 - INFO - logging info, DB connected.
+2025-03-24 10:26:00,365 - INFO - logging info, DB connected.
+2025-03-24 10:26:31,138 - INFO - logging info, DB connected.
+2025-03-24 10:26:39,127 - INFO - logging info, DB connected.
+2025-03-24 10:26:39,457 - ERROR - Database error: UNIQUE constraint failed: users.username
+2025-03-24 10:26:56,988 - INFO - logging info, DB connected.
+2025-03-24 10:26:57,350 - INFO - User test_user44345 registered successfully.
+2025-03-24 10:32:04,716 - INFO - logging info, DB connected.
+2025-03-24 10:32:05,008 - ERROR - Database error: table users has no column named iv
+2025-03-24 10:32:21,731 - INFO - logging info, DB connected.
+2025-03-24 10:32:22,053 - ERROR - Database error: table users has no column named iv
+2025-03-24 10:33:17,216 - INFO - logging info, DB connected.
+2025-03-24 10:33:17,549 - ERROR - Database error: table users has no column named iv
+2025-03-24 10:34:18,007 - INFO - logging info, DB connected.
+2025-03-24 10:34:18,295 - INFO - User test_user4434345 registered successfully.
+2025-03-24 10:35:08,182 - INFO - logging info, DB connected.
+2025-03-24 10:35:14,045 - ERROR - Database error: database is locked
+2025-03-24 10:35:44,153 - INFO - logging info, DB connected.
+2025-03-24 10:35:50,018 - ERROR - Database error: database is locked
+2025-03-24 10:35:57,708 - INFO - logging info, DB connected.
+2025-03-24 10:35:58,036 - INFO - User test_user4434345 registered successfully.
