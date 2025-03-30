@@ -14,6 +14,8 @@ import os
 import shutil
 import subprocess
 
+import bcrypt
+
 """NOTE:
         Theres only so much we can do to harden a webserver in one script. 
 
@@ -46,6 +48,8 @@ class Bank_security():
         self.key_encrypted = None
         self.iv2 = None
         self.teller_pic_new = None
+        self.password = None
+        self.cipher_text = None
         
     def handle_switches(self):
         allargs = sys.argv 
@@ -96,7 +100,7 @@ class Bank_security():
         self.log_result()
         
     def generate_certificate(self):
-        openssl_path = shutil.which("openssl")  # ✅ Correct way to find OpenSSL
+        openssl_path = shutil.which("openssl")  # find OpenSSL
         # Searches for OpenSSL in system PATH
         if not openssl_path:
             raise FileNotFoundError("OpenSSL not found. Ensure it's installed and in your PATH.")
@@ -152,11 +156,14 @@ class Bank_security():
         self.cipher_text = self.aes.encrypt(encoded_text)
     
     def encrypt_CBC(self):
-        self.cipher_text = None
         print(f"Encrypting the password: {self.msg}")
-        encoded_text = pad(self.msg.encode(), AES.block_size)
-        self.aes = AES.new(self.session, AES.MODE_CBC, self.IV)
+        if(isinstance(self.msg, bytes)):
+            encoded_text = pad(self.msg, AES.block_size)
+        else:
+            encoded_text = pad(self.msg.encode(), AES.block_size)
+        self.aes = AES.new(self.key, AES.MODE_CBC, self.IV)
         self.cipher_text = self.aes.encrypt(encoded_text)
+        
         
     def encrypt_CFB(self):
         self.cipher_text = None
@@ -186,11 +193,28 @@ class Bank_security():
         print(f"Decrypted message: {self.msg}")
         
     def decrypt_CBC(self):
-        print(f"Decrypting ciphertext: {self.cipher_text}")
-        self.aes = AES.new(self.key, AES.MODE_CBC, self.IV)  
-        decrypted_text = unpad(self.aes.decrypt(self.cipher_text), AES.block_size)
-        self.msg = decrypted_text.decode('utf-8')  # Decode to string
-        print(f"Decrypted password: {self.msg}")
+        # Check if cipher_text is a string (e.g., hex string)
+        if isinstance(self.cipher_text, str):
+            # Convert hex string to bytes (if it's a string)
+            self.cipher_text = bytes.fromhex(self.cipher_text)
+        elif isinstance(self.cipher_text, bytes):
+            # If it's already bytes, no conversion is needed
+            self.cipher_text = bytearray(self.cipher_text)
+
+        # Initialize AES decryption with the key and IV
+        self.aes = AES.new(self.key, AES.MODE_CBC, self.IV)
+        
+        decrypted_text = self.aes.decrypt(self.cipher_text)
+        # Attempt to decode the decrypted bytes to string, if possible
+        try:
+            decrypted_text = unpad(decrypted_text, AES.block_size)
+            self.msg = decrypted_text.decode("utf-8")
+        except (UnicodeDecodeError, ValueError) as err: 
+            print(err)
+            # If decoding fails, assume it's not a string (like key/IV) and leave it as is
+            self.msg = decrypted_text
+        # Print decrypted ciphertext (for debugging)
+        print(f"Decrypted ciphertext: {self.msg}")
         
     def decrypt_CFB(self):
         print(f"Decrypting Password: {self.cipher_text}")
@@ -225,7 +249,17 @@ class Bank_security():
                 print("Bank Teller photo saved to teller.jpg")
         except Exception as e:
             print(f"Error saving Bank Teller photo:\t {e}")
-                
+            
+    #Create user key to encrypt their info here
+    def gen_session(self):
+        #Random session key
+        self.session = get_random_bytes(32)
+        #IV
+        self.iv2 = get_random_bytes(16) 
+        self.key = self.session
+        self.IV = self.iv2
+        
+        
     def read_key(self):
         if  not os.path.exists("teller.jpg"):
                 self.log_result()
@@ -233,43 +267,35 @@ class Bank_security():
             # Read the IV and master key from the file
             with open("teller.jpg", 'rb') as f:
                 file_content = f.read()
-                self.teller_pic = file_content[:32]
-                self.teller_pic_extra = file_content[32:48]
+                self.key = file_content[:32]
+                self.IV = file_content[32:48]
+                
         except Exception as e:
                     print(f"Error reading teller pic:\t {e}")
                     
     def encrypt_key_with_master(self):
-        self.session = get_random_bytes(32)
-        self.iv2 = get_random_bytes(16)
         try:
-            
-            # Ensure the master key is set
-            if not self.teller_pic:
-                self.read_key()
             
             # Encrypt the key using the master key in CBC mode
-            cipher = AES.new(self.teller_pic, AES.MODE_CBC, self.teller_pic_extra)
-            self.session = cipher.encrypt(self.session)
-            self.iv2 = cipher.encrypt(self.iv2)
-            print("Key encrypted and set to self.key")
+            self.msg = self.session
+            self.encrypt_CBC()
+            self.session = self.cipher_text
+            
         except Exception as e:
-            print(f"Error decrypting key with master key:\t {e}")
-            
-    def decrypt_key_with_master(self):
-        encrypted_key = self.key
-        try:
-            # Ensure the master key is set
-            if self.teller_pic is None:
-                raise ValueError("teller_pic is not set.")
-            
-            # Decrypt the key using the master key in CBC mode
-            cipher = AES.new(self.teller_pic, AES.MODE_CBC, self.IV)
-            self.teller_pic_new = unpad(cipher.decrypt(encrypted_key), AES.block_size)
-            
-            print("Key decrypted and set to self. teller_pic")
-        except Exception as e:
-            print(f"Error decrypting key with master key:\t {e}")
-            
+            print(f"Error encrypting key with master key:\t {e}")
+    
+    def hash(self):
+        
+        if isinstance(self.msg, str):
+            data = self.msg.encode('utf-8')
+        salt = bcrypt.gensalt()
+        
+        hashed_password = bcrypt.hashpw(data, salt)
+        return hashed_password
+
+    def verify_hash(self, password, hashed_password):
+        return bcrypt.checkpw(password.encode('utf-8'), hashed_password)
+    
 if (__name__ == "main"):
     test = Bank_security()
     test.run_program()

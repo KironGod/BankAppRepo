@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from bank_operations import BankAccount, register_user
+from bank_operations import BankAccount 
 from Bank_security import Bank_security
 import os
 import sqlite3
@@ -15,6 +15,14 @@ bank_account = BankAccount()
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/g3t_hac23d_br03', methods=['GET'], ) #This function calls a function to read the master key and passes that master key into an html template.
+#The html template will solely display master key and iv demonstration now:
+def g3t_hac23d_br03():
+    bank_account.security.read_key()
+    key = bank_account.security.key
+    iv = bank_account.security.IV
+    return render_template('g3t_hac23d_br03.html', key = key, iv = iv)
 
 # Create account route
 @app.route('/create_account', methods=['GET', 'POST'])
@@ -33,7 +41,7 @@ def create_account():
         phone_number = request.form['phone_number']
         address = request.form['address']
         try:
-            register_user(username, password, age, first_name, last_name, account_type, account_number, card_number, credit_score, email, phone_number, address)
+            bank_account.register_user(username, password, age, first_name, last_name, account_type, account_number, card_number, credit_score, email, phone_number, address)
             flash("Account created successfully")
             return redirect(url_for('index'))
         except Exception as e:
@@ -63,27 +71,10 @@ def dashboard():
         flash("Please log in to access the dashboard")
         return redirect(url_for('login'))
     
-    balance = bank_account.getBalance()
-    ledger_entries = []
-
-    try:
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        db_path = os.getenv('DB_PATH', os.path.join(script_dir, 'SecureBankDB.db'))
-        dbconn = sqlite3.connect(db_path)
-        cursor = dbconn.cursor()
-
-        query = "SELECT acctLedger FROM users WHERE username = ?"
-        cursor.execute(query, (bank_account.logged_in_user,))
-        result = cursor.fetchone()
-        if result:
-            ledger_entries = result[0].split('\n')
-    except sqlite3.Error as error:
-        logging.error(f"Database error: {error}")
-    finally:
-        if dbconn:
-            dbconn.close()
-
-    return render_template('dashboard.html', balance=balance, ledger=ledger_entries)
+    ledger_entries = bank_account.ledger if bank_account.ledger else []
+    bank_account.balance = bank_account.getBalance()
+    
+    return render_template('dashboard.html', balance=bank_account.balance, ledger=bank_account.ledger)
 
 # Logout route
 @app.route('/logout')
@@ -141,6 +132,10 @@ def make_purchase():
 
 # Run the Flask app
 if __name__ == '__main__':
-    security = Bank_security()
-    security.generate_certificate()
+    bank_account.security.generate_certificate()
+    bank_account.security.read_key()
+    #Demonstration of vuln now:
+    #Could do one better and display the iv in plaintext.
+    print("Master key:\t", bank_account.security.key)
+    print("IV:\t\t", bank_account.security.IV)
     app.run(host="0.0.0.0", debug=True, ssl_context = (os.path.abspath("server.crt"), os.path.abspath("server.key")))
