@@ -305,22 +305,6 @@ def verify_user(password, hashed_password):
     return bcrypt.checkpw(password.encode(), hashed_password)
 
 
-"""
-register_user(
-    username="drew",
-    password="drew",
-    age=30,
-    first_name="John",
-    last_name="Doe",
-    account_type="Checking",
-    account_number="123456789",
-    card_number="987654321",
-    credit_score="750",
-    email="johndoe@example.com",
-    phone_number="123-456-7890",
-    address="123 Test St, Test City, TC 12345"
-)
 
 
-BankAccount().login("drew", "drew")
-"""
+

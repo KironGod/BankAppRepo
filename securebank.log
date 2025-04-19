@@ -3638,3 +3638,120 @@
 2025-03-30 13:11:06,407 - INFO - 127.0.0.1 - - [30/Mar/2025 13:11:06] "GET /dashboard HTTP/1.1" 200 -
 2025-03-30 13:11:51,243 - INFO - 127.0.0.1 - - [30/Mar/2025 13:11:51] "GET / HTTP/1.1" 200 -
 2025-03-30 13:11:51,652 - INFO - 127.0.0.1 - - [30/Mar/2025 13:11:51] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-04-01 13:30:14,158 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.12.114.58:5000
+2025-04-01 13:30:14,217 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-01 13:30:14,229 - INFO -  * Restarting with stat
+2025-04-01 13:30:14,616 - WARNING -  * Debugger is active!
+2025-04-01 13:30:14,620 - INFO -  * Debugger PIN: 300-307-651
+2025-04-10 17:09:38,209 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.23.118:5000
+2025-04-10 17:09:38,210 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-10 17:09:38,215 - INFO -  * Restarting with stat
+2025-04-10 17:09:39,343 - WARNING -  * Debugger is active!
+2025-04-10 17:09:39,356 - INFO -  * Debugger PIN: 352-347-882
+2025-04-10 17:09:53,971 - INFO - 127.0.0.1 - - [10/Apr/2025 17:09:53] "GET / HTTP/1.1" 200 -
+2025-04-10 17:09:54,076 - INFO - 127.0.0.1 - - [10/Apr/2025 17:09:54] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-04-10 17:09:57,712 - INFO - 127.0.0.1 - - [10/Apr/2025 17:09:57] "GET /create_account HTTP/1.1" 200 -
+2025-04-10 17:16:46,977 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.23.118:5000
+2025-04-10 17:16:46,979 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-10 17:16:46,983 - INFO -  * Restarting with stat
+2025-04-10 17:16:47,846 - WARNING -  * Debugger is active!
+2025-04-10 17:16:47,862 - INFO -  * Debugger PIN: 352-347-882
+2025-04-10 17:18:19,769 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.23.118:5000
+2025-04-10 17:18:19,770 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-10 17:18:19,773 - INFO -  * Restarting with stat
+2025-04-10 17:18:20,971 - WARNING -  * Debugger is active!
+2025-04-10 17:18:20,979 - INFO -  * Debugger PIN: 716-655-884
+2025-04-10 17:18:32,623 - INFO - 127.0.0.1 - - [10/Apr/2025 17:18:32] "[33mGET /g3t_hac23d_br03.html HTTP/1.1[0m" 404 -
+2025-04-10 17:18:36,455 - INFO - 127.0.0.1 - - [10/Apr/2025 17:18:36] "GET /g3t_hac23d_br03 HTTP/1.1" 200 -
+2025-04-10 17:21:54,593 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.23.118:5000
+2025-04-10 17:21:54,593 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-10 17:21:54,598 - INFO -  * Restarting with stat
+2025-04-10 17:21:56,611 - WARNING -  * Debugger is active!
+2025-04-10 17:21:56,620 - INFO -  * Debugger PIN: 716-655-884
+2025-04-10 17:22:07,742 - INFO - 127.0.0.1 - - [10/Apr/2025 17:22:07] "GET / HTTP/1.1" 200 -
+2025-04-10 17:22:07,992 - INFO - 127.0.0.1 - - [10/Apr/2025 17:22:07] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-04-10 17:22:36,136 - INFO - 127.0.0.1 - - [10/Apr/2025 17:22:36] "GET /g3t_hac23d_br03 HTTP/1.1" 200 -
+2025-04-10 17:25:57,735 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.23.118:5000
+2025-04-10 17:25:57,736 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-10 17:25:57,738 - INFO -  * Restarting with stat
+2025-04-10 17:25:58,364 - WARNING -  * Debugger is active!
+2025-04-10 17:25:58,376 - INFO -  * Debugger PIN: 352-347-882
+2025-04-10 17:26:05,727 - INFO - 127.0.0.1 - - [10/Apr/2025 17:26:05] "GET / HTTP/1.1" 200 -
+2025-04-10 17:26:05,925 - INFO - 127.0.0.1 - - [10/Apr/2025 17:26:05] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-04-10 17:26:08,193 - INFO - 127.0.0.1 - - [10/Apr/2025 17:26:08] "GET /create_account HTTP/1.1" 200 -
+2025-04-10 17:26:39,020 - INFO - 127.0.0.1 - - [10/Apr/2025 17:26:39] "GET /g3t_hac23d_br03 HTTP/1.1" 200 -
+2025-04-10 17:32:24,669 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.30.23.118:5000
+2025-04-10 17:32:24,669 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-10 17:32:24,672 - INFO -  * Restarting with stat
+2025-04-10 17:32:28,879 - WARNING -  * Debugger is active!
+2025-04-10 17:32:28,886 - INFO -  * Debugger PIN: 716-655-884
+2025-04-10 17:33:21,572 - INFO - 127.0.0.1 - - [10/Apr/2025 17:33:21] "GET / HTTP/1.1" 200 -
+2025-04-10 17:33:21,753 - INFO - 127.0.0.1 - - [10/Apr/2025 17:33:21] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-04-10 17:33:23,090 - INFO - 127.0.0.1 - - [10/Apr/2025 17:33:23] "GET /create_account HTTP/1.1" 200 -
+2025-04-10 17:37:10,438 - INFO - logging info, DB connected.
+2025-04-10 17:37:10,451 - INFO - User Drew testing registered successfully.
+2025-04-10 17:37:10,467 - INFO - 127.0.0.1 - - [10/Apr/2025 17:37:10] "[32mPOST /create_account HTTP/1.1[0m" 302 -
+2025-04-10 17:37:10,480 - INFO - 127.0.0.1 - - [10/Apr/2025 17:37:10] "GET / HTTP/1.1" 200 -
+2025-04-10 17:37:10,503 - INFO - 127.0.0.1 - - [10/Apr/2025 17:37:10] "[36mGET /static/bankworker.jpg HTTP/1.1[0m" 304 -
+2025-04-18 23:44:42,757 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.3.184:5000
+2025-04-18 23:44:42,757 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 23:44:42,757 - INFO -  * Restarting with stat
+2025-04-18 23:44:43,437 - WARNING -  * Debugger is active!
+2025-04-18 23:44:43,441 - INFO -  * Debugger PIN: 352-347-882
+2025-04-18 23:45:03,222 - INFO - 127.0.0.1 - - [18/Apr/2025 23:45:03] "GET / HTTP/1.1" 200 -
+2025-04-18 23:45:03,960 - INFO - 127.0.0.1 - - [18/Apr/2025 23:45:03] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-04-18 23:45:04,591 - INFO - 127.0.0.1 - - [18/Apr/2025 23:45:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-18 23:46:28,042 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.3.184:5000
+2025-04-18 23:46:28,042 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 23:46:28,066 - INFO -  * Restarting with stat
+2025-04-18 23:46:28,807 - WARNING -  * Debugger is active!
+2025-04-18 23:46:28,815 - INFO -  * Debugger PIN: 352-347-882
+2025-04-18 23:46:59,515 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.3.184:5000
+2025-04-18 23:46:59,519 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 23:46:59,521 - INFO -  * Restarting with stat
+2025-04-18 23:47:00,333 - WARNING -  * Debugger is active!
+2025-04-18 23:47:00,338 - INFO -  * Debugger PIN: 352-347-882
+2025-04-18 23:47:31,888 - INFO - 127.0.0.1 - - [18/Apr/2025 23:47:31] "GET / HTTP/1.1" 200 -
+2025-04-18 23:47:32,046 - INFO - 127.0.0.1 - - [18/Apr/2025 23:47:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-18 23:47:32,052 - INFO - 127.0.0.1 - - [18/Apr/2025 23:47:32] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-04-18 23:49:32,114 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.3.184:5000
+2025-04-18 23:49:32,114 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 23:49:32,114 - INFO -  * Restarting with stat
+2025-04-18 23:49:33,084 - WARNING -  * Debugger is active!
+2025-04-18 23:49:33,089 - INFO -  * Debugger PIN: 352-347-882
+2025-04-18 23:49:49,717 - INFO - 127.0.0.1 - - [18/Apr/2025 23:49:49] "GET / HTTP/1.1" 200 -
+2025-04-18 23:49:49,912 - INFO - 127.0.0.1 - - [18/Apr/2025 23:49:49] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-04-18 23:49:51,278 - INFO - 127.0.0.1 - - [18/Apr/2025 23:49:51] "GET /login HTTP/1.1" 200 -
