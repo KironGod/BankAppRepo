@@ -5,6 +5,7 @@ import os
 import sqlite3
 import logging
 
+
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Necessary for session handling and flash messages
 

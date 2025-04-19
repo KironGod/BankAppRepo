@@ -20,7 +20,6 @@ class BankAccount:
     def __init__(self):
         self.security = Bank_security.Bank_security()
         ##Generate a certificate for TLS traffic. IF a certificate doesn't exist,submit a password and make one. Else, submit a password to use it.
-        self.security.generate_certificate()
         self.balance = 0
         self.ledger = []
         self.logged_in_user = None

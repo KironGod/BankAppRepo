@@ -1,5 +1,6 @@
 import socket
 import sys
+from getpass import getpass
 import time
 #import pyAesCrypt to encrypt a file
 from Crypto.Cipher import AES
@@ -40,7 +41,7 @@ class Bank_security():
         self.key = None
         self.aes = None
         self.mode = None
-        self.nonce = None
+        
         self.path = None
         self.teller_pic = None
         self.teller_pic_extra = None    
@@ -105,8 +106,9 @@ class Bank_security():
         if not openssl_path:
             raise FileNotFoundError("OpenSSL not found. Ensure it's installed and in your PATH.")
         self.path = openssl_path
-        password = "password"
-        if (not os.path.exists("server.key" or not os.path.exists("server.crt"))):
+        
+        if (not os.path.exists("server.key") or not os.path.exists("server.crt")):
+            password = getpass("Enter Certificate password now bro3:\t")
             cmd = [f"{self.path}", "req", "-x509", "-newkey", "rsa:2048","-keyout", "server.key", "-out", "server.crt", "-days", "365","-passout", f"pass:{password}"]
             subprocess.run(cmd)
         

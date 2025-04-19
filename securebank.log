@@ -3755,3 +3755,41 @@
 2025-04-18 23:49:49,717 - INFO - 127.0.0.1 - - [18/Apr/2025 23:49:49] "GET / HTTP/1.1" 200 -
 2025-04-18 23:49:49,912 - INFO - 127.0.0.1 - - [18/Apr/2025 23:49:49] "GET /static/bankworker.jpg HTTP/1.1" 200 -
 2025-04-18 23:49:51,278 - INFO - 127.0.0.1 - - [18/Apr/2025 23:49:51] "GET /login HTTP/1.1" 200 -
+2025-04-18 23:58:35,482 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.3.184:5000
+2025-04-18 23:58:35,482 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 23:58:35,485 - INFO -  * Restarting with stat
+2025-04-18 23:58:43,959 - WARNING -  * Debugger is active!
+2025-04-18 23:58:43,959 - INFO -  * Debugger PIN: 352-347-882
+2025-04-18 23:59:57,687 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\Bank_security.py', reloading
+2025-04-18 23:59:57,725 - INFO -  * Restarting with stat
+2025-04-19 00:08:46,330 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.3.184:5000
+2025-04-19 00:08:46,330 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 00:08:46,330 - INFO -  * Restarting with stat
+2025-04-19 00:08:51,536 - WARNING -  * Debugger is active!
+2025-04-19 00:08:51,544 - INFO -  * Debugger PIN: 352-347-882
+2025-04-19 00:09:13,809 - INFO -  * Detected change in 'C:\\Users\\mokwei\\BankAppRepo\\Bank_security.py', reloading
+2025-04-19 00:09:13,861 - INFO -  * Restarting with stat
+2025-04-19 00:12:19,012 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.3.184:5000
+2025-04-19 00:12:19,012 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 00:12:19,012 - INFO -  * Restarting with stat
+2025-04-19 00:12:19,586 - WARNING -  * Debugger is active!
+2025-04-19 00:12:19,586 - INFO -  * Debugger PIN: 352-347-882
+2025-04-19 00:12:30,123 - INFO - 127.0.0.1 - - [19/Apr/2025 00:12:30] "GET / HTTP/1.1" 200 -
+2025-04-19 00:12:30,224 - INFO - 127.0.0.1 - - [19/Apr/2025 00:12:30] "GET /static/bankworker.jpg HTTP/1.1" 200 -
+2025-04-19 00:12:54,070 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://192.168.3.184:5000
+2025-04-19 00:12:54,070 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 00:12:54,070 - INFO -  * Restarting with stat
+2025-04-19 00:12:54,585 - WARNING -  * Debugger is active!
+2025-04-19 00:12:54,592 - INFO -  * Debugger PIN: 352-347-882
